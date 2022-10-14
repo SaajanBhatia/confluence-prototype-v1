@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
+    
+    <!--Import custom css-->
+    <link rel="stylesheet" href="./style.css">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+  <style>
+    body{
+        background-image: url('./images/hex-bg.jpg');
+        background-size: cover;
+    }
+  </style>
+
   <body>
     <!--Landing Page-->
     <div class="container-fluid">
@@ -13,7 +29,7 @@
         <div class="row">
             <div class="col text-center">
                 <div class="logo" style="margin: 2.5rem;">
-                    <h2>Confluence</h2>
+                    <h2 class="text-white">Confluence</h2>
                 </div>
             </div>
         </div>
@@ -21,7 +37,7 @@
         <!--Login Card-->
         <div class="row">
             <div class="col">
-                <div class="card bg-dark text-white" style="width: 50vw; margin-left: auto; margin-right: auto; margin-top: 10vh;">
+                <div class="card bg-dark text-white" style="width: 50vw; margin-left: auto; margin-right: auto; margin-top: 12.5vh;">
                     <div class="card-body mb-3">
                         <div class="sign-in-text text-center mt-3">
                             <p class="text-muted m-0">WELCOME BACK</p>
@@ -29,18 +45,20 @@
                         </div>
                         <div class="sign-in-form mb-3 mt-3">
                             <div class="row" style="margin-left: 4rem; margin-right: 4rem;">
-                                <div class="col">
-                                    <form>
+                                <div class="col-8 mx-auto">
+                                    <form id="sample-signin-form">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                                            <input type="email" class="form-control bg-dark text-white" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your username">
+                                            <input type="email" required class="form-control bg-dark text-white" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your username">
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                                            <input type="password" class="form-control bg-dark text-white" id="exampleInputPassword1" placeholder="Enter your password">
+                                            <input type="password" required class="form-control bg-dark text-white" id="exampleInputPassword1" placeholder="Enter your password">
                                         </div>
-                                        <div class="row text-center" style="margin-left: 10rem; margin-right: 10rem; margin-top: 3rem;">
-                                            <button type="submit" class="btn btn-primary">Sign In</button>
+                                        <div class="row text-center" style="margin-top: 3rem;">
+                                            <div class="col-10 mx-auto">
+                                                <button type="submit" class="btn btn-primary" id="submit-sample" style="width: 15vw;">Sign In</button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -52,10 +70,10 @@
         </div>
 
         <!--Footer-->
-        <div class="row">
-            <div class="col text-center">
-                <p>
-                    Built by Team09
+        <div class="row footer fixed-bottom">
+            <div class="col text-center text-white">
+                <p style="font-family: consolas;">
+                    Built by Team 9
                 </p>
             </div>
         </div>
@@ -76,7 +94,33 @@
         }
     }
 
-    var tempUser = 'user@companyDomain.com'
-    var tempPass = 'Password_123'
+    const tempUser = 'user@companyDomain.com'
+    const tempPass = 'Password_123'
+
+
+    $("#sample-signin-form").submit(function(event) {
+        console.log('form trigger')
+
+        const email = document.getElementById('exampleInputEmail1');
+        const pass = document.getElementById('exampleInputPassword1');
+
+        if (email.value !== tempUser) {
+            email.classList.add('is-invalid')
+            pass.classList.remove('is-invalid')
+            console.log('invalid username')
+        } else if (pass.value !== tempPass) {
+            email.classList.remove('is-invalid')
+            pass.classList.add('is-invalid')
+            console.log('invalid password')
+        } else {
+            pass.classList.remove('is-invalid')
+            email.classList.remove('is-invalid')
+
+            alert('hello')
+        }
+
+        event.preventDefault();
+    })
+    
   </script>
 </html>
