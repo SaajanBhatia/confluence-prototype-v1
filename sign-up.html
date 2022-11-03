@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confluence Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        body{
+            background-image: url('./images/hex-bg.jpg');
+            background-size: cover;
+        }
+        #lengthCheck, #numericCheck, #upperCaseCheck, #specialCharCheck {
+            display: block;
+            position: relative;
+            color: red;
+            font-size: 18px;
+            width: 92%;
+        }
+
+        span{
+            margin: 10px;
+            font-weight: bo;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="" style="width: 17.5rem">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col">
+                <div class="card-body">
+                    <div class="row p-4">
+                        <div class="col-8 mx-auto">
+                            <form class="row g-3" id="form" onsubmit=" return handleForm(event)">
+                                <!-- ACTION NEEDED-->
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control bg-dark text-white" id="firstName" placeholder="John" required>
+                                    </div>
+        
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control bg-dark text-white" id="lastName" placeholder="Smith" required>
+                                    </div>
+                                </div>
+        
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control bg-dark text-white" id="email" placeholder="name@example.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-11 col-sm-11">
+                                        <label for-="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control input-md bg-dark text-white" id="password" placeholder="Enter your password"
+                                            oninput="validate()" required>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1" style="padding-top: 2rem">
+                                        <div id="set">
+                                            <button class="btn btn-secondary" onclick="see()" type="button">
+                                                <i id="see" class="far fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                                        
+                                <div class="container p-4 mt-1">
+                                    <div class="card bg-dark border-light">
+                                        <div class="card-body">
+                                            <div id="lengthCheck">
+                                                <i class="far fa-check-circle"></i> <span> Length between 8-24</span>
+                                            </div>
+                                            <div id="numericCheck">
+                                                <i class="far fa-check-circle"></i> <span> Contains numeric value</span>
+                                            </div>
+                                            <div id="upperCaseCheck">
+                                                <i class="far fa-check-circle"></i> <span> Contains Uppercase character</span>
+                                            </div>
+                                            <div id="specialCharCheck">
+                                                <i class="far fa-check-circle"></i> <span> Contains special character</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select id="gender" class="form-select bg-dark text-white" required>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Non-Binary</option>
+                                            <option>Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+        
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="birthDate" class="form-label">Date of Birth</label>
+                                        <input type="date" class="form-control bg-dark text-white" id="birthDate" required>
+                                    </div>
+                                </div>
+        
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="startDate" class="form-label">Contract Start Date</label>
+                                        <input type="date" class="form-control bg-dark text-white" id="startDate" onin required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                                    </div>
+                                </div>
+                                                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script>
+        var is_visible = false;
+
+        function see() {
+        var input = document.getElementById("password");
+        var see = document.getElementById("see");
+
+        if(is_visible) {
+            input.type = 'password';
+            is_visible = false;
+            see.style.color = 'white';
+        }else {
+            input.type = 'text';
+            is_visible = 'true';
+            see.style.color = 'white';
+        }
+        }
+
+        function validate() {
+        var input = document.getElementById("password").value;
+        var valid = false
+        input = input.trim();
+        document.getElementById("password").value = input;
+        
+        if (input.length >= 8 && input.length <= 24) {
+            document.getElementById("lengthCheck").style.color = "green";
+        }else {
+            document.getElementById("lengthCheck").style.color = "red";
+        }
+
+        if (input.match(/[0-9]/i)) {
+            document.getElementById("numericCheck").style.color = "green";
+        }else {
+            document.getElementById("numericCheck").style.color = "red";
+        }
+
+        if (input.match(/[A-Z]/i)) {
+            document.getElementById("upperCaseCheck").style.color = "green";
+        }else {
+            document.getElementById("upperCaseCheck").style.color = "red";
+        }
+
+        if (input.match(/[!@£$%^&_*]/i)) {
+            document.getElementById("specialCharCheck").style.color = "green";
+        }else {
+            document.getElementById("specialCharCheck").style.color = "red";
+        }
+        
+        }
+
+        function handleForm(e) {
+        e.preventDefualt;
+        var password = document.getElementById("password").value;
+        var startDate = document.getElementById("startDate").value;
+        var birthDate = document.getElementById("birthDate").value;
+        var now = new Date();
+        startDate = new Date(startDate);
+        birthDate = new Date(birthDate);
+        if (startDate > now) {
+            alert("Contract Start Date must not be from the future");
+            return false;
+        } else if (now.getFullYear() - birthDate.getFullYear() < 18) {
+            alert("You must be over 18");
+            return false; 
+        }else if (!(password.length >= 8 && password.length <= 24) || !(password.match(/[0-9]/i)) || 
+        !(password.match(/[!@£$%^&_*]/i)) || !(password.match(/[A-Z]/i))) {
+            alert("Password missing critereon");
+            return false;
+        } else {
+            return true;
+        }
+            
+        
+        }
+    </script>
+</body>

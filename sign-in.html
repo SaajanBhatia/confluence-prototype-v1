@@ -7,11 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     
     <!--Import custom css-->
-    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -28,8 +29,8 @@
         <!--Logo-->
         <div class="row">
             <div class="col text-center">
-                <div class="logo" style="margin: 2.5rem;">
-                    <h2 class="text-white">Confluence</h2>
+                <div class="logo mt-5">
+                    <img src="./images/logo.png" alt="" style="width: 17.5rem">
                 </div>
             </div>
         </div>
@@ -37,14 +38,14 @@
         <!--Login Card-->
         <div class="row">
             <div class="col">
-                <div class="card bg-dark text-white" style="width: 50vw; margin-left: auto; margin-right: auto; margin-top: 12.5vh;">
+                <div class="card bg-dark text-white" style="width: 30vw; margin-left: auto; margin-right: auto; margin-top: 8vw;">
                     <div class="card-body mb-3">
                         <div class="sign-in-text text-center mt-3">
                             <p class="text-muted m-0">WELCOME BACK</p>
                             <h5>Log into your account</h5>
                         </div>
                         <div class="sign-in-form mb-3 mt-3">
-                            <div class="row" style="margin-left: 4rem; margin-right: 4rem;">
+                            <div class="row" style="margin-left: 0; margin-right: 0;">
                                 <div class="col-8 mx-auto">
                                     <form id="sample-signin-form">
                                         <div class="mb-3">
@@ -94,7 +95,7 @@
         }
     }
 
-    const tempUser = 'user@companyDomain.com'
+    const tempUser = 'admin@confluence.biz'
     const tempPass = 'Password_123'
 
 
@@ -116,7 +117,7 @@
             pass.classList.remove('is-invalid')
             email.classList.remove('is-invalid')
 
-            alert('hello')
+            window.location.replace("./admin.html");
         }
 
         event.preventDefault();

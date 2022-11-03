@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confluence, by Team 09</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="row custom-nav">
+            <div class="col m-4">
+                <nav class="navbar navbar-expand-sm">
+                    <div class="container">
+                        <a class="navbar-brand custom-h1" href="/">
+                            <img src="./images/logo.png" alt="" style="width: 15rem">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class=" nav navbar-nav navbar-center custom-ul mt-3">
+                                <li class="nav-item">
+                                    <a class="nav-link custom-active" href="#">
+                                        Admin
+                                    </a>
+                                </li>
+                                <li class="nav-item custom-active">
+                                    <a class="nav-link" href="#">
+                                        Board
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Knowledge
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Topics
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Body Content -->
+        <div class="row">
+            <!--Add a new user to the system-->
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-light">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Add User
+                        </div>
+                        <div class="card-subtitle mb-2 text-muted">
+                            Add either a Manager, Team Leader or General Employee Account, then invite them to join the system.
+                        </div>
+                        <div class="card-text">
+                            <form action="">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com" required>
+                                    <label for="floatingInput">User's Full Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control bg-dark text-white" id="floatingPassword" placeholder="Password" required>
+                                    <label for="floatingPassword">User's Email Address</label>
+                                </div>
+                                <select class="form-select mb-3 bg-dark text-white" aria-label="Default select example" required>
+                                    <option selected>Select Account Type</option>
+                                    <option value="1">Senior Manager</option>
+                                    <option value="2">Project Leader</option>
+                                    <option value="3">Employee</option>
+                                </select>
+                                <div class="row mb-3">
+                                    <div class="col text-center">
+                                        <button class="btn btn-outline-secondary " onclick="window.location.replace('./sign-up.html');">Send Invitation</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col px-3 text-center">
+                                        <input class="form-control bg-dark text-white border-dark text-muted" type="text" value="URL: https://confluence.biz/u/u123wefg" aria-label="readonly input example" readonly>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--View all Users-->
+            <div class="col-md-8">
+                <div class="card bg-dark text-white border-light">
+                    <div class="card-body">
+                        <div class="card-title">
+                            All Users
+                        </div>
+                        <div class="card-subtitle mb-2 text-muted">
+                            View All User Details Here
+                        </div>
+                        <div class="card-text">
+                            <table class="table text-white">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email Username</th>
+                                        <th scope="col">Account Type</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>Manager</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        <td>Employee</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>Bird</td>
+                                        <td>@bird</td>
+                                        <td>Employee</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Thorton</td>
+                                        <td>Klair</td>
+                                        <td>@klair</td>
+                                        <td>Manager</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Adam</td>
+                                        <td>Janagal</td>
+                                        <td>@jan</td>
+                                        <td>Project Lead</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Avkaran</td>
+                                        <td>Doyle</td>
+                                        <td>@doyle</td>
+                                        <td>Employee</td>
+                                        <td>❌✏️🔎</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer-->
+        <div class="row">
+
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #141414;
+}
+
+/* Remove Anchor Style */
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+/* Custom logo https://codepen.io/tunk/pen/nrXmNJ */
+#custom-logo{
+    width: 60px;
+    position: relative;
+}
+
+#custom-logo span {
+    position: absolute;
+    display: block;
+}
+
+.firstOverlayLine {
+    margin-top: 10px;
+    height: 20px;
+    left: 25%;
+    width: 8px;
+    background: #F5F5E0;
+    border-radius: 10px;
+}
+
+.secondOverlayLine {
+    height: 40px;
+    left: 50%;
+    width: 8px;
+    background: #F5F5E0;
+    border-radius: 10px;
+}
+
+.thirdOverlayLine {
+    margin-top: 10px;
+    height: 20px;
+    left: 75%;
+    width: 8px;
+    background: #F5F5E0;
+    border-radius: 10px;
+}
+
+.fourthOverlayLine {
+    margin-left: 10px;
+    left: 100%;
+}
+
+.span-logo {
+    color: #F5F5E0;
+}
+
+
+/* Center Navbar Items */
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+/* Nav Styling */
+/* Heading links - active links off white */
+
+.custom-nav a{
+    color: #8A8D93;
+}
+
+.custom-ul li a.custom-active{
+    color: #F5F5F5;
+}
+
+.custom-ul li a,
+.custom-ul li a:after,
+.custom-ul li a:before {
+  transition: all .5s;
+}
+.custom-ul li a:hover {
+  color: #555;
+}
+
+/* stroke */
+.custom-ul li a {
+  position: relative;
+}
+.custom-ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+.custom-ul li a:hover:after {
+  width: 100%;
+}
+
+.custom-nav{
+    color: #F5F5F5;
+}

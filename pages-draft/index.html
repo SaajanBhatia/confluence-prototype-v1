@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/output.css" rel="stylesheet" />
+    <script src="./scripts.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body>
+    <!--Manager view-->
+
+    <div class="flex">
+      <nav>
+        <!--Yusufs code-->
+      </nav>
+      <div class="flex flex-col w-screen h-screen md:flex-row">
+        <div
+          class="flex flex-col justify-between w-full md:w-1/4 h-1/4 md:h-full bg-gray-00"
+        >
+          <div class="align-top text-center text-2xl">
+            To do List
+            <!--Yusufs code-->
+          </div>
+          <div class="flex flex-col items-center p-4">
+            <button
+              id="employeeWorking"
+              class="justify-end bg-transparent hover:bg-orange-300 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"
+              onclick="toggleModal('modalEmployeeList')"
+            >
+              Employee List
+            </button>
+            <button
+              id="employeeReview"
+              class="justify-end bg-transparent hover:bg-orange-300 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"
+              onclick="toggleModal('modalEmployeeReview')"
+            >
+              Employee Review
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex justify-center w-full md:w-3/4 h-3/4 md:h-full bg-slate-100"
+        >
+          <!--Kanban code-->
+          <div class="flex flex-col gap-12 items-center">
+            <div class="flex flex-row justify-between w-full">
+              <div id="projectTitle" class="justify-start p-2 text-3xl">
+                Project Title
+              </div>
+
+              <button
+                id="addTask"
+                class="justify-end bg-transparent hover:bg-orange-300 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"
+                onclick="toggleModal('modalAddTask')"
+              >
+                Button
+              </button>
+            </div>
+
+            <div
+              class="flex flex-row max-w-[100vw] md:max-w-[70vw] justify-between overflow-x-auto child:flex-shrink-0 child:w-64 font-sans p-2 gap-4"
+            >
+              <div
+                class="p-2 h-96 overflow-auto shadow-md rounded-md bg-orange-500"
+                id="backlog"
+              >
+                <h4>Backlog</h4>
+              </div>
+              <div
+                class="p-2 h-96 overflow-auto shadow-md rounded-md bg-orange-400"
+                id="inProgress"
+              >
+                <h4>In progress</h4>
+              </div>
+              <div
+                class="p-2 h-96 overflow-auto shadow-md rounded-md bg-orange-300"
+                id="review"
+              >
+                <h4>Review</h4>
+              </div>
+              <div
+                class="p-2 h-96 overflow-auto shadow-md rounded-md bg-orange-200"
+                id="completed"
+              >
+                <h4>Completed</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal for add task-->
+      <div
+        class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+        id="modalAddTask"
+      >
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+          <div
+            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+          >
+            <div
+              class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+            >
+              <h3 class="text-3xl font-semibold">Create Task</h3>
+            </div>
+            <div class="relative p-6 flex-auto">
+              <form>
+                <label for="tname">Task Name</label>
+                <input
+                  class="border-3 rounded"
+                  type="text"
+                  id="tname"
+                  name="tname"
+                />
+                <select name="kanbanCol" id="newTask">
+                  <option value="toDo">To Do</option>
+                  <option value="inProgress">In Progress</option>
+                  <option value="review">Review</option>
+                  <option value="completed">Completed</option>
+                </select>
+              </form>
+            </div>
+            <div
+              class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+            >
+              <button
+                class="bg-emerald-500 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                onclick="toggleModal('modalAddTask')"
+              >
+                Add Task
+              </button>
+              <button
+                class="bg-emerald-500 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                onclick="toggleModal('modalAddTask')"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!--EmployeeList-->
+      <div
+        class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+        id="modalEmployeeList"
+      >
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+          <div
+            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+          >
+            <div
+              class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+            >
+              <h3 class="text-3xl font-semibold">Employees on Project</h3>
+            </div>
+            <div class="relative p-6 flex-auto">
+              <p>List of employees on the project</p>
+            </div>
+            <div
+              class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+            >
+              <button
+                class="bg-gray-500 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                onclick="toggleModal('modalEmployeeList')"
+              >
+                Exit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!--EmployeePerformance-->
+      <div
+        class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+        id="modalEmployeeReview"
+      >
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+          <div
+            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+          >
+            <div
+              class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+            >
+              <h3 class="text-3xl font-semibold">Performance Review</h3>
+            </div>
+            <div class="relative p-6 flex-auto">
+              <p>Review of employees on this project</p>
+            </div>
+            <div
+              class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+            >
+              <button
+                class="bg-gray-500 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                onclick="toggleModal('modalEmployeeReview')"
+              >
+                Exit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden opacity-25 fixed inset-0 z-40 bg-black"
+        id="modal-id-backdrop"
+      ></div>
+    </div>
+  </body>
+
+  <script>
+    //Modal - add task kanban
+    function toggleModal(modalID) {
+      document.getElementById(modalID).classList.toggle("hidden");
+      document.getElementById('modal-id-backdrop').classList.toggle("hidden");
+      document.getElementById(modalID).classList.toggle("flex");
+    }
+  </script>
+</html>
