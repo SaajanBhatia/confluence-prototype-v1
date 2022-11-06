@@ -1,0 +1,317 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forum Page</title>
+        <!--Bootstrap CSS CDN-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        
+        <!--Bootstrap Icons CDN-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        
+        <!--Google Fonts CDN-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        
+        <!--jQuery CDN-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <!--Custom Styling-->
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./style.css">
+        <style>
+            #pagebottom {
+                text-align: center;
+                position: absolute;
+                bottom: -100vh;
+                width: 1000px;
+                margin-left: 18%;
+                background-color: grey;
+                border-style: solid;
+            }
+        
+        
+            /*
+        CSS for scroller container
+        */
+        
+            body {
+                position: relative;
+            }
+        
+        
+            .scroll-container {
+                position: relative;
+                height: 15rem;
+                overflow-y: scroll;
+            }
+        </style>
+        
+    </head>
+    <body class="text-white">
+        <div class="container">
+            <!-- Navbar -->
+        <div class="row custom-nav">
+            <div class="col m-4">
+                <nav class="navbar navbar-expand-sm">
+                    <div class="container">
+                        <a class="navbar-brand custom-h1" href="/">
+                            <img src="./images/logo.png" alt="" style="width: 15rem">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class=" nav navbar-nav navbar-center custom-ul mt-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./manager-dash.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item custom-active">
+                                    <a class="nav-link" href="./board.html">
+                                        Board
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./articles.html">
+                                        Knowledge
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link custom-active" href="./topics.html">
+                                        Topics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./account.html">
+                                        Account
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./sign-in.html">
+                                        Exit <i class="bi bi-box-arrow-right mx-1"
+                                            style="font-size: 1rem; color: grey;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h4 class="card-title">Software Engineering</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Topic Posts</h6>
+                        <p class="card-text">Here is a description of Software Engineering. Software engineering is a systematic engineering
+                            approach to software development.</p>
+                        <btn class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Create Post</btn>
+                        <a href="./topics.html" class="btn btn-outline-secondary">Return to Forum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content bg-dark text-white">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+                      </div>
+                          <form action="" id="add-topic-form">
+                              <!-- Make Variable Number of Cards -->
+                              <div class="modal-body">
+                          
+                                  <label for="topicName">Post Title </label><br>
+                                  <input type="text" id="topicName" class="form-control" name="topicName" placeholder="Enter Title" required >
+                                  <br> 
+                          
+                                  <label for="topicDesc">Post: </label><br>
+                                  <div class="form-group">
+                                      <textarea id="topicDesc" name="topicDesc" rows="4" maxlength="1000" class="form-control"
+                                          placeholder="Enter your thoughts here"></textarea>
+                                  </div>
+                                                            
+                                  <input type="reset" class="btn btn-danger mt-3 mb-2 p-2 text-center">
+                          
+                          
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Post</button>
+                              </div>
+                          </form>
+                  </div>
+              </div>
+            </div>
+          
+    <!-- Card-->
+          <div class="row mt-3" id="topic-data">
+
+            <div class="col-4 col-sm-4 mb-4">
+                <div class="card">
+                  <img class="card-img-top img-thumbnail"
+                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
+                    alt="Card image cap">
+                  <div class="card-body text-dark">
+                    <h5 class="Topic Name 1">Interview Ideas for Software Engineers</h5>
+                    <p class="card-text">
+                      Take a look at some sample interview questions to ask when hiring:
+                    </p>
+                    <ul>
+                      <li>Why Did You Decide to Become a Software Engineer?</li>
+                      <li>What programming languages do you prefer?</li>
+                      <li>What's important when checking a team member's code?</li>
+                      <li>What project management tools have you used?</li>
+                    </ul>
+                      <!-- Button trigger modal -->
+                      <div class="row mb-3">
+                        <div class="col text-center">
+                            <button type="button" class="btn btn-secondary">
+                                Add Comment
+                            </button>
+                        </div>
+                    </div>
+                    <h5>Comments</h5>
+                    <div class="row p-3" style="max-height: 15rem">
+                      <div class="col scroll-container" tabindex="0" data-spy="scroll" data-target=".navbar" data-offset="50">
+                        <div class="row">
+                          <div class="col-6">
+                            <div id="list-example" class="list-group">
+                              <a class="list-group-item list-group-item-action" href="#list-item-1">David</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-2">Anthony</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-3">Lucia</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-4">Alisha</a>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                              class="scrollspy-example" tabindex="0">
+                              <h4 id="list-item-1">David</h4>
+                              <p>You always come in on time, follow your schedule and adhere to your designated lunch break time.
+                              </p>
+                              <h4 id="list-item-2">Anthony</h4>
+                              <p>She meets all company standards for attendance and punctuality.</p>
+                              <h4 id="list-item-3">Lucia</h4>
+                              <p>You schedule your time off in advance and can be relied upon for completing your tasks on time.</p>
+                              <h4 id="list-item-4">Alisha</h4>
+                              <p>He replies to emails and calls in time.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+    
+            
+            
+          </div>
+      </div>
+    
+    
+          
+    
+    
+    
+      <!-- Javascript Bootstrap-->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+    
+      <!-- Custom JS Script-->
+      <script>
+          var sampleCardImageURL = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80';
+          function createCard(title, desc, img) {
+              return `
+              <div class="col-4 col-sm-4 mb-4">
+              <div class="card">
+                <img class="card-img-top img-thumbnail"
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
+                  alt="Card image cap">
+                <div class="card-body text-dark">
+                  <h5 class="Topic Name 1">${title}</h5>
+                  <p class="card-text">
+                    ${desc}
+                    </p>
+                  
+                    <!-- Button trigger modal -->
+                    <div class="row mb-3">
+                      <div class="col text-center">
+                          <button type="button" class="btn btn-secondary">
+                              Add Comment
+                          </button>
+                      </div>
+                  </div>
+                  <h5>Comments</h5>
+                  <div class="row p-3" style="max-height: 15rem">
+                    <div class="col scroll-container" tabindex="0" data-spy="scroll" data-target=".navbar" data-offset="50">
+                      <div class="row">
+                        <div class="col-6">
+                          <div id="list-example" class="list-group">
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">David</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">Anthony</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">Lucia</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">Alisha</a>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                            class="scrollspy-example" tabindex="0">
+                            <h4 id="list-item-1">David</h4>
+                            <p>You always come in on time, follow your schedule and adhere to your designated lunch break time.
+                            </p>
+                            <h4 id="list-item-2">Anthony</h4>
+                            <p>She meets all company standards for attendance and punctuality.</p>
+                            <h4 id="list-item-3">Lucia</h4>
+                            <p>You schedule your time off in advance and can be relied upon for completing your tasks on time.</p>
+                            <h4 id="list-item-4">Alisha</h4>
+                            <p>He replies to emails and calls in time.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+              `
+          } 
+    
+          $('#add-topic-form').submit(function(event) {
+              data = {
+                  topicName : $('#topicName').val(),
+                  topicDesc : $('#topicDesc').val(),
+                  owner : 'John Smith',
+              }
+              $('#topic-data').append(createCard(data.topicName, data.topicDesc, sampleCardImageURL)); // Append html to div
+              console.log(data); // Debug
+              $('#exampleModal').modal('hide'); // Close modal
+              event.preventDefault(); // Prevents page refresh
+          })
+      </script>
+    
+    </body>
+    </html>

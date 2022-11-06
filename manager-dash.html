@@ -41,31 +41,42 @@
                         <a class="navbar-brand custom-h1" href="/">
                             <img src="./images/logo.png" alt="" style="width: 15rem">
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                
+        
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class=" nav navbar-nav navbar-center custom-ul mt-3">
                                 <li class="nav-item">
-                                    <a class="nav-link custom-active" href="#">
+                                    <a class="nav-link custom-active" href="./manager-dash.html">
                                         Dashboard
                                     </a>
                                 </li>
                                 <li class="nav-item custom-active">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./board.html">
                                         Board
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./articles.html">
                                         Knowledge
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="./topics.html">
                                         Topics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./account.html">
+                                        Account
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./sign-in.html">
+                                        Exit <i class="bi bi-box-arrow-right mx-1" style="font-size: 1rem; color: grey;"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -76,9 +87,9 @@
         </div>
 
         <!-- Body Content -->
-        <div class="row">
+        <div class="row m-2">
             <!--Add a new user to the system-->
-            <div class="col-md-5">
+            <div class="col-md-4 mb-3">
                 <div class="card bg-dark text-white border-light">
                     <div class="card-body">
                         <div class="card-title">
@@ -88,71 +99,127 @@
                             View all the projects, their respective team leads, number of members working, number of tasks and estimated completion time.
                         </div>
                         <div class="card-text">
-                            
+                            <div class="container-fluid">
+
+                                <div class="row m-3 p-2">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="card bg-info">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Horizon 3</h5>
+                                                <h6 class="card-subtitle mb-2 text-dark">Project Lead: Isha Patel</h6>
+                                                <p class="card-text">Some quick example text to show the project description set by the Manager
+                                                </p>
+                                                <a href="#" class="card-link">Access Project Board</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3 p-2">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="card bg-warning">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Horizon 3</h5>
+                                                <h6 class="card-subtitle mb-2 text-dark">Project Lead: Isha Patel</h6>
+                                                <p class="card-text">Some quick example text to show the project description set by the Manager
+                                                </p>
+                                                <a href="#" class="card-link">Access Project Board</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3 p-2">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="card bg-danger">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Horizon 3</h5>
+                                                <h6 class="card-subtitle mb-2 text-dark">Project Lead: Isha Patel</h6>
+                                                <p class="card-text">Some quick example text to show the project description set by the Manager
+                                                </p>
+                                                <a href="#" class="card-link">Access Project Board</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3 p-2">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="card bg-dark">
+                                            <div class="card-body">
+                                                <a href="#" class="text-light">View All Projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--View all Users-->
-            <div class="col-md-7">
+            <div class="col-md-8 mb-5">
                 <div class="card bg-dark text-white border-light">
                     <div class="card-body">
-                        <div class="card-title">
-                            All Project Leaders
-                        </div>
-                        <div class="card-subtitle mb-2 text-muted">
-                            <p mb-3>View all project leaders</p>
+                        <div class="ml-5">
+                            <div class="card-title">
+                                All Project Leaders
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <p mb-3>View all project leaders</p>
+                            </div>
                         </div>
                         <div class="card-text">
                             <div class="row mt-2 p-2">
-                                <div class="col-1 col-md-1">
+                                <div class="col-3 col-md-3">
                                     <div class="circular--portrait"> <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" /> </div>
                                 </div>
-                                <div class="col-6 col-md-6">
-                                    <h5>Theresa Adams</h5>
-                                    <hp class="text-muted">Manager</p>
+                                <div class="col-5 col-md-5 text-center">
+                                    <h5>Isha Patel</h5>
+                                    <hp class="text-muted">Team Lead Since April 2018</p>
                                 </div>
-                                <div class="col-5 col-md-5 alight-right">
+                                <div class="col-4 col-md-4 alight-right">
                                     <h5 class="text-end">4<span style="color: gray"> Active Projects</span></h5>
                                 </div>
                             </div>
 
                             <div class="row mt-2 p-2">
-                                <div class="col-1 col-md-1">
+                                <div class="col-3 col-md-3">
                                     <div class="circular--portrait"> <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" /> </div>
                                 </div>
-                                <div class="col-6 col-md-6">
-                                    <h5>Michaela Johnson</h5>
-                                    <hp class="text-muted">Manager</p>
+                                <div class="col-5 col-md-5 text-center">
+                                    <h5>Michael Johnson</h5>
+                                    <hp class="text-muted">Team Lead Since March 2020</p>
                                 </div>
-                                <div class="col-5 col-md-5 alight-right">
+                                <div class="col-4 col-md-4 alight-right">
                                     <h5 class="text-end">0<span style="color: gray"> Active Projects</span></h5>
                                 </div>
                             </div>
 
                             <div class="row mt-2 p-2">
-                                <div class="col-1 col-md-1">
+                                <div class="col-3 col-md-3">
                                     <div class="circular--portrait"> <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" /> </div>
                                 </div>
-                                <div class="col-6 col-md-6">
-                                    <h5>Terry Crews</h5>
-                                    <hp class="text-muted">Manager</p>
+                                <div class="col-5 col-md-5 text-center">
+                                    <h5>Teresa Anderson</h5>
+                                    <hp class="text-muted">Team Lead Since January 2021</p>
                                 </div>
-                                <div class="col-5 col-md-5 alight-right">
+                                <div class="col-4 col-md-4 alight-right">
                                     <h5 class="text-end">3<span style="color: gray"> Active Projects</span></h5>
                                 </div>
                             </div>
 
                             <div class="row mt-2 p-2">
-                                <div class="col-1 col-md-1">
+                                <div class="col-3 col-md-3">
                                     <div class="circular--portrait"> <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80" /> </div>
                                 </div>
-                                <div class="col-6 col-md-6">
+                                <div class="col-5 col-md-5 text-center">
                                     <h5>Adam Reeve</h5>
-                                    <hp class="text-muted">Manager</p>
+                                    <hp class="text-muted">Team Lead Since November 2022</p>
                                 </div>
-                                <div class="col-5 col-md-5 alight-right">
+                                <div class="col-4 col-md-4 alight-right">
                                     <h5 class="text-end">1<span style="color: gray"> Active Projects</span></h5>
                                 </div>
                             </div>
@@ -165,7 +232,7 @@
         </div>
 
         <!-- Footer-->
-        <div class="row">
+        <div class="row mb-5 p-3">
 
         </div>
     </div>

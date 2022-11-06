@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Bootstrap CSS-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="./style.css">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+	</head>
+ 
+	<body class="">
+		<div class="container">
+			<!-- Navbar -->
+			<div class="row custom-nav">
+				<div class="col m-4">
+					<nav class="navbar navbar-expand-sm">
+						<div class="container">
+							<a class="navbar-brand custom-h1" href="/">
+								<img src="./images/logo.png" alt="" style="width: 15rem">
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+			
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class=" nav navbar-nav navbar-center custom-ul mt-3">
+									<li class="nav-item">
+										<a class="nav-link" href="./manager-dash.html">
+											Dashboard
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./board.html">
+											Board
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link custom-active" href="./articles.html">
+											Knowledge
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./topics.html">
+											Topics
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./account.html">
+											Account
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./sign-in.html">
+											Exit <i class="bi bi-box-arrow-right mx-1" style="font-size: 1rem; color: grey;"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col mx-auto text-center">
+					<div class="row">
+						<div class="col-8 col-md-8">
+							<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for documents..."
+								title="Type in a name" class="form-control py-3 ps-4 ms-1">
+						</div>
+						<div class="col-1 col-md-1">
+							<button type="button" class="btn btn-outline-light float-left py-3" style="width: 100%">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+									viewBox="0 0 16 16">
+									<path
+										d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+								</svg>
+							</button>
+						</div>
+						<div class="col-3 col-md-3">
+							<a type="button" class="btn btn-primary float-left py-3" style="width: 100%" href="./writeArticle.html">Create Document</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col text-white text-end p-3">
+					<button class="btn btn-secondary text-white">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter"
+							viewBox="0 0 16 16">
+							<path
+								d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+						</svg>
+						Filter Docs
+					</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="card m-3 px-4 pt-2">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-10 col-md-10">
+								<h5 class="card-title">Troubleshooting Steps for the Apache Server 2.0 <span class="badge text-bg-primary">Technical</span> <span class="badge text-bg-info">Server</span></h5>
+								<h6 class="card-subtitle mb-2 text-muted">Written by David Gordon | 1st November 2022 | 15 Min Read</h6>
+								<p class="card-text">
+									Reduce MTTR by Correlating Your Data to the Service, Instance, or Host Causing the Issue. Eliminate Data Silos, Add
+									End-to-End Visibility, and Improve Cross-Team Collaboration. No CC Necessary. Real-Time Monitoring. 250K Users.
+									Something could be blocking the port it uses; there could be another instance of Apache already running; or there might
+									be an incompatibility ...
+								</p>
+							</div>
+							<div class="col-2 col-md-2">
+								<img src="https://images.unsplash.com/photo-1560732488-6b0df240254a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2VydmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" class="img img-thumbnail" style="border-radius: 15px" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="card m-3 px-4 pt-2">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-10 col-md-10">
+								<h5 class="card-title">How to Replace an Empty Ink Cartridge <span class="badge text-bg-success">Non-Technical</span> <span class="badge text-bg-warning">Printer</span></h5>
+								<h6 class="card-subtitle mb-2 text-muted">Written by Larry Cheek | 6th March 2022 | 2 Min Read</h6>
+								<p class="card-text">
+									How do I manually change the ink cartridge in my HP printer?
+									Insert your hand into the Ink Cartridge Access Area and then move the Carriage manually. Move the Carriage to the left
+									side if it's stuck on the right, and vice versa. Also, move the Carriage to the right if ...
+								</p>
+							</div>
+							<div class="col-2 col-md-2">
+								<img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJpbnRlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60" class="img img-thumbnail" style="border-radius: 15px" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="card m-3 px-4 pt-2">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-10 col-md-10">
+								<h5 class="card-title">No, Elon and Jack are not “competitors.” They're collaborating. <span class="badge text-bg-success">Non-Technical</span> <span class="badge text-bg-danger">News</span></h5>
+								<h6 class="card-subtitle mb-2 text-muted">Written by Shonah Relic | 12th November 2022 | 5 Min Read</h6>
+								<p class="card-text">
+									Since taking over Twitter last week, Elon Musk has found himself embroiled in multiple controversies, including
+									his clashes with two of the most high-profile users on the site, novelist Stephen King (who has 6.9 million
+									followers) and congresswoman Alexandria Ocasio-Cortez ...
+								</p>
+							</div>
+							<div class="col-2 col-md-2">
+								<img src="https://miro.medium.com/max/786/1*qWiyMxttCwdDYm7YsVMiQQ.jpeg" class="img img-thumbnail" style="border-radius: 15px" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row m-5 p-5"></div>
+
+			
+			
+
+			<ul id="myUL">
+			</ul>
+		</div>
+			
+		<script>
+			$('input').on('keypress', function (event) {
+				var regex = new RegExp("^[a-zA-Z0-9 ]+$");
+				var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+				if (!regex.test(key)) {
+					event.preventDefault();
+					return false;
+				}
+			});
+		
+			var data_array = [];
+			$.ajax({
+				type: "GET",
+				url: "upload.php",
+				crossDomain: true,
+				cache: false,
+				success: function(data) {
+					data = JSON.parse(data);
+					data_array = [...data.files];
+					var completelist= document.getElementById("myUL");
+					for (var i = 0; i < data_array.length; i++) {
+						var item = data_array[i]["name"].replace(".txt", "");
+						var mdate = data_array[i]["date_modified"];
+						completelist.innerHTML += "<li><a id=" + item.replace(/ /g, "_") + " href='#'><span id=" + item.replace(/ /g, "_") + ">" + item + "</span><div class='float-right'><span id=" + item.replace(/ /g, "_") + " style='font-weight:lighter;font-size:14px'>" + mdate + "</span><button id=" + item.replace(/ /g, "_") + " class='btn btn-danger' style='margin-left:10px;' onclick='deleteFile(this.id)'>Delete</button><button id=" + item.replace(/ /g, "_") + " class='btn btn-secondary' style='margin-left:5px;' onclick='editFile(this.id)'>Edit</button></div></a></li>";
+					}
+				}
+			});
+			
+			document.getElementById("myUL").addEventListener("click",function(e) {
+				if(e.target && (e.target.nodeName == "LI" || e.target.nodeName == "A" || e.target.nodeName == "SPAN")) {
+					var url = "viewer.html?name=" + e.target.id;
+					window.location.href = url;
+				}
+			});
+			
+			function myFunction() {
+				var input, filter, ul, li, a, i, txtValue;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				
+				li = ul.getElementsByTagName("li");
+				for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					span = a.getElementsByTagName("span")[0]
+					txtValue = span.textContent || span.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+			
+			function createDoc() {
+				window.location.href = "doc.html";
+			}
+			
+			function deleteFile(id) {
+				if(confirm("You are about to delete your document. Deleted documents cannot be retrieved.")) {
+					$.ajax({
+						type: "POST",
+						url: "upload.php",
+						crossDomain: true,
+						cache: false,
+						data: {
+							name: id.replace(/_/g, " ")
+						},
+						success: function(data) {
+							location.reload();
+						}
+					});
+				}
+			}
+			
+			function editFile(id) {
+				var url = "doc.html?name=" + id;
+				window.location.href = url;
+			}
+		</script>
+
+	</body>
+
+</html>

@@ -20,7 +20,7 @@
             background-image: url('./images/hex-bg.jpg');
             background-size: cover;
         }
-        #lengthCheck, #numericCheck, #upperCaseCheck, #specialCharCheck {
+        #lengthCheck, #numericCheck, #upperCaseCheck, #specialCharCheck, #passwordsMatch {
             display: block;
             position: relative;
             color: red;
@@ -44,29 +44,38 @@
                 </div>
             </div>
         </div>
+        <div class="row m-2 p-2">
+            <div class="col-md-6 col-xs-12 mx-auto">
+                <div class="card bg-success text-dark">
+                    <div class="card-body">
+                        <p>Welcome, <strong>Jasmeet Singh</strong>. You have been invited to create an account as a Manager.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="col">
                 <div class="card-body">
                     <div class="row p-4">
                         <div class="col-8 mx-auto">
-                            <form class="row g-3" id="form" onsubmit=" return handleForm(event)">
+                            <form class="row g-3" id="form" onsubmit="handleForm(event)">
                                 <!-- ACTION NEEDED-->
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="firstName" class="form-label">First Name</label>
-                                        <input type="text" class="form-control bg-dark text-white" id="firstName" placeholder="John" required>
+                                        <input type="text" class="form-control bg-dark text-white" id="firstName" placeholder="Enter your first name" required>
                                     </div>
         
                                     <div class="col-md-6">
                                         <label for="lastName" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control bg-dark text-white" id="lastName" placeholder="Smith" required>
+                                        <input type="text" class="form-control bg-dark text-white" id="lastName" placeholder="Enter your lastname" required>
                                     </div>
                                 </div>
         
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control bg-dark text-white" id="email" placeholder="name@example.com" required>
+                                        <input type="email" class="form-control bg-dark text-white" id="email" placeholder="name@example.com" value="JasmeetSingh@confluence.biz" required>
                                     </div>
                                 </div>
                                 
@@ -74,11 +83,26 @@
                                     <div class="col-md-11 col-sm-11">
                                         <label for-="password" class="form-label">Password</label>
                                         <input type="password" class="form-control input-md bg-dark text-white" id="password" placeholder="Enter your password"
-                                            oninput="validate()" required>
+                                            oninput="validate(event)" required>
                                     </div>
                                     <div class="col-md-1 col-sm-1" style="padding-top: 2rem">
                                         <div id="set">
-                                            <button class="btn btn-secondary" onclick="see()" type="button">
+                                            <button class="btn btn-secondary" onclick="see('password')" type="button">
+                                                <i id="see" class="far fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-11 col-sm-11">
+                                        <label for-="password" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control input-md bg-dark text-white" id="confirmPassword" placeholder="Enter your password"
+                                            oninput="validateConfirmPassword(event)" required>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1" style="padding-top: 2rem">
+                                        <div id="set">
+                                            <button class="btn btn-secondary" onclick="see('confirmPassword')" type="button">
                                                 <i id="see" class="far fa-eye"></i>
                                             </button>
                                         </div>
@@ -99,6 +123,9 @@
                                             </div>
                                             <div id="specialCharCheck">
                                                 <i class="far fa-check-circle"></i> <span> Contains special character</span>
+                                            </div>
+                                            <div id="passwordsMatch">
+                                                <i class="far fa-check-circle"></i> <span> Passwords Match</span>
                                             </div>
                                         </div>
                                     </div>
@@ -148,76 +175,89 @@
     <script>
         var is_visible = false;
 
-        function see() {
-        var input = document.getElementById("password");
-        var see = document.getElementById("see");
+        function see(eventID) {
+            var input = document.getElementById(eventID);
+            var see = document.getElementById("see");
 
-        if(is_visible) {
-            input.type = 'password';
-            is_visible = false;
-            see.style.color = 'white';
-        }else {
-            input.type = 'text';
-            is_visible = 'true';
-            see.style.color = 'white';
+            if(is_visible) {
+                input.type = 'password';
+                is_visible = false;
+                see.style.color = 'white';
+            }else {
+                input.type = 'text';
+                is_visible = 'true';
+                see.style.color = 'white';
+            }
         }
+
+        function validateConfirmPassword(){
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password === confirmPassword) {
+                document.getElementById("passwordsMatch").style.color = "green";
+            } else {
+                document.getElementById("passwordsMatch").style.color = "red";
+            }
         }
 
         function validate() {
-        var input = document.getElementById("password").value;
-        var valid = false
-        input = input.trim();
-        document.getElementById("password").value = input;
-        
-        if (input.length >= 8 && input.length <= 24) {
-            document.getElementById("lengthCheck").style.color = "green";
-        }else {
-            document.getElementById("lengthCheck").style.color = "red";
-        }
-
-        if (input.match(/[0-9]/i)) {
-            document.getElementById("numericCheck").style.color = "green";
-        }else {
-            document.getElementById("numericCheck").style.color = "red";
-        }
-
-        if (input.match(/[A-Z]/i)) {
-            document.getElementById("upperCaseCheck").style.color = "green";
-        }else {
-            document.getElementById("upperCaseCheck").style.color = "red";
-        }
-
-        if (input.match(/[!@£$%^&_*]/i)) {
-            document.getElementById("specialCharCheck").style.color = "green";
-        }else {
-            document.getElementById("specialCharCheck").style.color = "red";
-        }
-        
-        }
-
-        function handleForm(e) {
-        e.preventDefualt;
-        var password = document.getElementById("password").value;
-        var startDate = document.getElementById("startDate").value;
-        var birthDate = document.getElementById("birthDate").value;
-        var now = new Date();
-        startDate = new Date(startDate);
-        birthDate = new Date(birthDate);
-        if (startDate > now) {
-            alert("Contract Start Date must not be from the future");
-            return false;
-        } else if (now.getFullYear() - birthDate.getFullYear() < 18) {
-            alert("You must be over 18");
-            return false; 
-        }else if (!(password.length >= 8 && password.length <= 24) || !(password.match(/[0-9]/i)) || 
-        !(password.match(/[!@£$%^&_*]/i)) || !(password.match(/[A-Z]/i))) {
-            alert("Password missing critereon");
-            return false;
-        } else {
-            return true;
-        }
+            var input = document.getElementById("password").value;
+            var valid = false
+            input = input.trim();
+            document.getElementById("password").value = input;
             
-        
+            if (input.length >= 8 && input.length <= 24) {
+                document.getElementById("lengthCheck").style.color = "green";
+            }else {
+                document.getElementById("lengthCheck").style.color = "red";
+            }
+
+            if (input.match(/[0-9]/i)) {
+                document.getElementById("numericCheck").style.color = "green";
+            }else {
+                document.getElementById("numericCheck").style.color = "red";
+            }
+
+            if (input.match(/[A-Z]/i)) {
+                document.getElementById("upperCaseCheck").style.color = "green";
+            }else {
+                document.getElementById("upperCaseCheck").style.color = "red";
+            }
+
+            if (input.match(/[!@£$%^&_*]/i)) {
+                document.getElementById("specialCharCheck").style.color = "green";
+            }else {
+                document.getElementById("specialCharCheck").style.color = "red";
+            }        
+        }
+
+        function handleForm(event) {
+            event.preventDefault();
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var startDate = document.getElementById("startDate").value;
+            var birthDate = document.getElementById("birthDate").value;
+            var now = new Date();
+            startDate = new Date(startDate);
+            birthDate = new Date(birthDate);
+            if (startDate > now) {
+                alert("Contract Start Date must not be from the future");
+                return false;
+            } else if (now.getFullYear() - birthDate.getFullYear() < 18) {
+                alert("You must be over 18");
+                return false; 
+            }else if (!(password.length >= 8 && password.length <= 24) || !(password.match(/[0-9]/i)) || 
+            !(password.match(/[!@£$%^&_*]/i)) || !(password.match(/[A-Z]/i))) {
+                alert("Password missing critereon");
+                return false;
+            } else if (confirmPassword !== password){
+                alert ("Passwords do not match")
+                return false;
+            } else {
+                console.log('login success')
+                return window.location.replace("./manager-dash.html");
+            }
+            // return ;
         }
     </script>
 </body>
