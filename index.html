@@ -96,7 +96,9 @@
     }
 
     const tempUser = 'admin@confluence.biz'
+    const tempEmp = 'emp@confluence.biz'
     const tempPass = 'Password_123'
+    const validUsernames = ["admin@confluence.biz", "emp@confluence.biz"]
 
 
     $("#sample-signin-form").submit(function(event) {
@@ -105,7 +107,7 @@
         const email = document.getElementById('exampleInputEmail1');
         const pass = document.getElementById('exampleInputPassword1');
 
-        if (email.value !== tempUser) {
+        if (!(validUsernames.includes(email.value))) {
             email.classList.add('is-invalid')
             pass.classList.remove('is-invalid')
             console.log('invalid username')
@@ -117,7 +119,13 @@
             pass.classList.remove('is-invalid')
             email.classList.remove('is-invalid')
 
-            window.location.replace("./admin.html");
+            if (email.value === tempEmp) {
+                window.location.replace("./board.html");
+            }
+
+            else {
+                window.location.replace("./admin.html");
+            }
         }
 
         event.preventDefault();
