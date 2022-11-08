@@ -249,7 +249,7 @@
                                                     <p>
                                                         This is a description of a item on the board.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleTaskModal"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -265,7 +265,7 @@
                                                     <p>
                                                         This is a description of a item on the board.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -283,7 +283,7 @@
                                                         the item
                                                         here.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -312,7 +312,7 @@
                                                     <p>
                                                         This is a task that is being worked on.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -328,7 +328,7 @@
                                                     <p>
                                                         Another task here that is in progress.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -357,7 +357,7 @@
                                                     <p>
                                                         This is a description of a item on the board.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -385,7 +385,7 @@
                                                     <p>
                                                         This is a description of an item.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -401,7 +401,7 @@
                                                     <p>
                                                         This is a description of a task item.
                                                     </p>
-                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                    <button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button>
                                                 </div>
                                             </div>
                                             <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"
@@ -477,6 +477,59 @@
             </div>
         </div>
 
+        <div class="modal fade" id="exampleTaskModal" tabindex="-1" aria-labelledby="Eaxample Task Modal" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        <img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/24/Photos-icon.png"
+                        class="rounded-circle float-right">
+                    <a href="" class="lead font-weight-light">TSK-ID</a></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-white">
+                    <p>This is a description of a task</p>
+                    <div>
+                        <h5>People Assigned</h5>
+                        <div class="row mb-3">
+                            <div class="avatars">
+                                <img src="https://images.unsplash.com/photo-1584997159889-8bb96d0a2217?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    alt="Avatar" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    alt="Avatar" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    alt="Avatar" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    alt="Avatar" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    alt="Avatar" class="avatar">
+                              </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <button class="btn btn-danger">Make Task Private</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                Expected Completion Time (Hours)
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" value="10"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="justify-content:space-between;">
+                    <button class="btn btn-light">Add Employee</button>
+                    <button class="btn btn-primary">Add Sub Tasks</button>
+                    <button class="btn btn-success">Share Task</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
@@ -485,7 +538,7 @@
             function createTask(event) {
                 var taskName = document.getElementById("taskID").value;
                 var taskDescription = document.getElementById("taskDescription").value;
-                var taskHTML = '<div class="card draggable shadow-sm bg-secondary" id="cd12" draggable="true" ondragstart="drag(event)"><div class="card-body p-2"><div class="card-title"><img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/24/Photos-icon.png"class="rounded-circle float-right"><a href="" class="lead font-weight-light">'+ taskName +'</a></div><p>'+ taskDescription +'</p><button class="btn btn-primary btn-sm">View</button></div></div><div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"ondragleave="clearDrop(event)"> &nbsp; </div>';    
+                var taskHTML = '<div class="card draggable shadow-sm bg-secondary" id="cd12" draggable="true" ondragstart="drag(event)"><div class="card-body p-2"><div class="card-title"><img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/24/Photos-icon.png"class="rounded-circle float-right"><a href="" class="lead font-weight-light">'+ taskName +'</a></div><p>'+ taskDescription +'</p><button class="btn btn-primary btn-sm"data-bs-toggle="modal" data-bs-target="#exampleTaskModal">View</button></div></div><div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)"ondragleave="clearDrop(event)"> &nbsp; </div>';    
                 //this is a hardcode for example purposes 
                 var taskHolders = document.getElementsByClassName('items border border-dark');
                 var dropzones = taskHolders[0].getElementsByClassName('dropzone rounded');

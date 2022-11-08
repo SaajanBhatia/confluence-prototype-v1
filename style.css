@@ -5,15 +5,16 @@
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: grey;
-    -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
+    -webkit-box-shadow: inset 0 0 6px rgba(90, 90, 90, 0.7);
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
     opacity: 10%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #141414;
 }
@@ -32,7 +33,7 @@ a.nostyle:visited {
 }
 
 /* Custom logo https://codepen.io/tunk/pen/nrXmNJ */
-#custom-logo{
+#custom-logo {
     width: 60px;
     position: relative;
 }
@@ -88,70 +89,83 @@ a.nostyle:visited {
 /* Nav Styling */
 /* Heading links - active links off white */
 
-.custom-nav a{
+.custom-nav a {
     color: #8A8D93;
 }
 
-.custom-ul li a.custom-active{
+.custom-ul li a.custom-active {
     color: #F5F5F5;
 }
 
 .custom-ul li a,
 .custom-ul li a:after,
 .custom-ul li a:before {
-  transition: all .5s;
+    transition: all .5s;
 }
+
 .custom-ul li a:hover {
-  color: #555;
+    color: #555;
 }
 
 /* stroke */
 .custom-ul li a {
-  position: relative;
-}
-.custom-ul li a:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: '.';
-  color: transparent;
-  background: #aaa;
-  height: 1px;
-}
-.custom-ul li a:hover:after {
-  width: 100%;
+    position: relative;
 }
 
-.custom-nav .custom-h1{
+.custom-ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+
+.custom-ul li a:hover:after {
+    width: 100%;
+}
+
+.custom-nav .custom-h1 {
     color: #F5F5F5;
 }
-  
-  
-  #myUL {
+
+
+#myUL {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  #myUL li a {
+}
+
+#myUL li a {
     border: 1px solid #ddd;
-    margin-top: -1px; /* Prevent double borders */
+    margin-top: -1px;
+    /* Prevent double borders */
     background-color: #f6f6f6;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block
-  }
-  
-  #myUL li a:hover:not(.header) {
+}
+
+#myUL li a:hover:not(.header) {
     background-color: #eee;
+}
+
+.ck-content {
+    min-height: 45rem;
+}
+
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
-  
-  .ck-content{
-      min-height: 45rem;
-  }
-  
+
+
